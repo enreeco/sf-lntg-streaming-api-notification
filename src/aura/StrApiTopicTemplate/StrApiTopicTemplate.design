@@ -1,0 +1,12 @@
+<design:component label="Streaming API Topic Template">
+	<design:attribute name="style" label="Style" 
+                      datasource="info,warning,error,success" default="info" />
+    <design:attribute name="topic" label="Streaming API topic name" 
+                      required="true" />
+    <design:attribute name="title" label="Notification title" 
+                      required="true" 
+                      description="Templated title: Opportunity {{Name}} just won for ${{Amount}}!"/>
+    <design:attribute name="content" label="Notification content" 
+                      required="false" 
+                      description="Templated content: Opportunity {{Name}} just won for ${{Amount}}!"/>
+</design:component>

@@ -1,0 +1,13 @@
+<design:component label="Streaming API Notification Deck">
+	<design:attribute name="topics" label="Streaming API topic names"
+                      description="Coma separated list of Streaming API Topic names"
+                      required="true" />
+    <design:attribute name="apiVersion" label="Streaming API version"
+                      default="36" required="true"
+                      description="Api version" />
+    <design:attribute name="notificationType" label="UI notification style"
+                      default="Toast" required="true"
+                      datasource="Toast,Alert" />
+    <design:attribute name="hideAfter" label="Hide component after seconds"
+                      default="3" required="true" />
+</design:component>

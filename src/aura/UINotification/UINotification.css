@@ -1,0 +1,6 @@
+.THIS.slds-transition-hide{
+ opacity: 0;
+ height: auto;
+ max-height: 0;
+ transition: opacity 0.5s linear, max-height 2s linear;
+}

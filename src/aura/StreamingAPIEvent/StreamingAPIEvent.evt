@@ -1,0 +1,8 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="topic" required="true" type="String"
+                    description="PushTopic name"/>
+    <aura:attribute name="data"  type="Map" 
+                    description="Sobject"/>
+    <aura:attribute name="event"  type="Map" 
+                    description="Event"/>
+</aura:event>

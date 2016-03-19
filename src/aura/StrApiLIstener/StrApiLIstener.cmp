@@ -1,0 +1,14 @@
+<aura:component controller="StrApiListenerController">
+    <ltng:require scripts="/resource/JSCometD/cometd.js,
+             /resource/JSCometD/jquery-1.5.1.js,
+             /resource/JSCometD/json2.js,
+             /resource/JSCometD/jquery.cometd.js"
+        afterScriptsLoaded="{!c.init}"/>
+
+    <aura:attribute name="topics" type="String" required="true" 
+                    description="PushTopic names" />
+    <aura:attribute name="apiVersion" type="Integer" required="true" 
+                    description="API Version" default="36"/>
+    <aura:attribute name="debugMetaChannels" type="Boolean" required="false" 
+                    description="Logs the meta channels messages" default="false"/>
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:handler event="c:StreamingAPIEvent" 
+                  action="{!c.handleStreamingAPIEvent}" />
+	<aura:registerEvent name="notificationEvent" type="c:ShowNotificationEvent"/>
+    
+    <aura:attribute name="topic" type="String" required="true" 
+                    description="PushTopic name" access="global"/>
+    <aura:attribute name="style" type="String" default="default" 
+                    description="Toast style" access="global"/>
+    <aura:attribute name="title" type="String" required="false" 
+                    description="Title template" access="global"/>
+    <aura:attribute name="content" type="String" required="false" 
+                    description="Content template" access="global"/>
+</aura:component>

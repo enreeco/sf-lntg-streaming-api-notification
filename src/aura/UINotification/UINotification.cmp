@@ -1,0 +1,44 @@
+<aura:component >
+    <ltng:require styles="/resource/SLDS100/assets/styles/salesforce-lightning-design-system-ltng.css" 
+    afterScriptsLoaded="{!c.doInit}"/>
+    
+    <aura:attribute name="title" type="String" 
+                    description="Toast title" required="true"/>
+    <aura:attribute name="content" type="String" 
+                    description="Toast content" />
+    <aura:attribute name="style" type="String" default="info"
+                    description="Toast style: info, success, warning, error" />
+    <aura:attribute name="type" type="String" default="Toast"
+                    description="Notification type: Toast, Alert" />
+    <aura:attribute name="hideAfter" type="Integer" default="3"
+                    description="Automatically hide the component after 'hideAfter' seconds" />
+    
+    <div class="slds" aura:id="base">
+	<aura:renderIf isTrue="{!v.type == 'Alert'}">
+        
+            <div class="{!'slds-notify slds-notify--alert slds-theme--'+v.style}" role="alert" >
+                <button class="slds-button slds-button--icon-inverse slds-notify__close" onclick="{!c.closeToast}">
+                    <c:svg class="slds-button__icon slds-button__icon--large" ariaHidden="true"
+                           xlinkHref="/resource/SLDS100/assets/icons/utility-sprite/svg/symbols.svg#close" />
+                </button>
+                <h2 class="slds-text-heading--small">{!v.title}</h2>
+                <p >{!v.content}</p>
+        </div>
+    </aura:renderIf>
+	<aura:renderIf isTrue="{!v.type != 'Alert'}">
+        
+            <div class="{!'slds-notify slds-notify--toast slds-theme--'+v.style}" role="alert" >
+              <button class="slds-button slds-button--icon-inverse slds-notify__close" onclick="{!c.closeToast}">
+                <c:svg class="slds-button__icon slds-button__icon--large" ariaHidden="true"
+                               xlinkHref="/resource/SLDS100/assets/icons/utility-sprite/svg/symbols.svg#close" />
+                <span class="slds-assistive-text">Close</span>
+              </button>
+              <div class="notify__content">
+                    <h2 class="slds-text-heading--small">{!v.title}</h2>
+                    <div class="{!'slds-theme--'+v.style}">{!v.content}</div>
+              </div>
+            
+        </div>
+    </aura:renderIf>
+    </div>
+</aura:component>

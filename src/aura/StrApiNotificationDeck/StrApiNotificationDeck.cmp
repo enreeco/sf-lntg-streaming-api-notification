@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+	<aura:attribute name="topics" type="String" required="true" 
+                    description="PushTopic names" access="global"/>
+    <aura:attribute name="apiVersion" type="Integer" required="true" access="global"
+                    description="API Version" default="36" />	
+    <aura:attribute name="notificationType" type="String" access="global" default="Toast"
+                    description="Toast, Alert" />
+    <aura:attribute name="hideAfter" type="Integer" access="global" default="3" 
+                    description="Hide notifications after 'hideAfter' seconds"/>
+    <aura:handler event="c:ShowNotificationEvent" 
+                  action="{!c.handleShowNotificationEvent}" />
+    
+    <c:StrApiLIstener topics="{!v.topics}"
+        apiVersion="{!v.apiVersion}" />
+    
+    <div class="slds slds-notify_container">{!v.body}</div>
+
+</aura:component>

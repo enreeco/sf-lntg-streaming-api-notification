@@ -1,0 +1,8 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="title" required="true" type="String"
+                    description="Notification title"/>
+    <aura:attribute name="content"  type="String" 
+                    description="Notification content"/>
+    <aura:attribute name="style"  type="String" 
+                    description="Notification style: info, success, warning, error"/>
+</aura:event>
