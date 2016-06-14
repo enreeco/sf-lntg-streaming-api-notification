@@ -17,7 +17,7 @@
             //iterates through
             topics = topics.split(',');
             
-            for(index in topics){
+            for(var index in topics){
                 if(!topics[index] || !topics[index].trim()) continue;
                 this.subscribeTopic(component, topics[index].trim());
             }
@@ -48,7 +48,9 @@
 
     //creates subscription to a given topic
     subscribeTopic: function(component, topic){
-        var ns = component.getDef().getDescriptor().getNamespace();
+    	//this apparently does not work! REPLACE WITH YOUR ACTUAL NAMESPACE
+        //var ns = component.getDef().getDescriptor().getNamespace();
+        var ns = 'c';
         var topicPath = '/topic/'+topic;
         //this is a custom streaming channel
         if(topic.indexOf('/') >= 0){
